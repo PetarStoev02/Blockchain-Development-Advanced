@@ -1,125 +1,49 @@
-# Micro-Scholarship Dispenser
+# Blockchain-Development-Advanced
 
-A smart contract system for distributing small ETH scholarships to verified students using Merkle proofs and Chainlink price feeds.
+## Description
+[Brief description of the project, its goals, and what it does.]
 
 ## Features
+[List key features or functionalities provided by this project.]
 
-- Minimal proxy factory pattern for gas-efficient deployments
-- Merkle tree-based allowlist for student verification
-- Chainlink price feed integration for USD-to-ETH conversion
-- One-time claim per student
-- Director can withdraw leftover funds
-- Maximum stipend of $5.00 USD
+## Technologies Used
+[List the main programming languages, frameworks, libraries, and tools used.]
+- [Technology 1]
+- [Technology 2]
+- [Technology 3]
+...
 
-## Setup
+## Setup and Installation
+[Instructions on how to set up the development environment and install dependencies.]
 
 ### Prerequisites
-- Node.js and npm
-- Foundry (forge, cast, anvil)
+[List any software or tools required before setup, e.g., Node.js, npm/yarn, Docker, specific blockchain client.]
 
-### Installation
-
-1. Install Foundry dependencies:
-```bash
-forge install
-```
-
-2. Install npm dependencies:
-```bash
-npm install
-```
-
-3. Create a `.env` file with your configuration:
-```
-PRIVATE_KEY=your_private_key
-SEPOLIA_RPC_URL=your_sepolia_rpc_url
-ETHERSCAN_API_KEY=your_etherscan_api_key
-```
-
-## Development
-
-### Compilation
-
-Using Hardhat:
-```bash
-npx hardhat compile
-```
-
-Using Foundry:
-```bash
-forge build
-```
-
-### Testing
-
-The project includes two test suites:
-
-1. Foundry Tests (Solidity):
-```bash
-forge test
-```
-These tests use the real Chainlink price feed on Sepolia testnet.
-
-2. Hardhat Tests (JavaScript):
-```bash
-npx hardhat test
-```
-These tests use a mock price feed with a fixed price of $2000 per ETH.
-
-For gas reporting:
-```bash
-forge test --gas-report
-```
-
-## Deployment
-
-1. Deploy to Sepolia using Hardhat:
-```bash
-npx hardhat run scripts/deploy.js --network sepolia
-```
-
-2. Generate Merkle proofs:
-```bash
-npx hardhat run scripts/generateMerkleProofs.js
-```
-
-## Contract Architecture
-
-- `ScholarshipFactory`: Deploys minimal proxies of the ScholarshipDispenser
-- `ScholarshipDispenser`: Main contract that handles scholarship distribution
-- `MockV3Aggregator`: Mock Chainlink price feed for testing
+### Steps
+1. Clone the repository:
+   ```bash
+   git clone [repository_url]
+   ```
+2. Navigate to the project directory:
+   ```bash
+   cd Blockchain-Development-Advanced
+   ```
+3. Install dependencies:
+   ```bash
+   [command to install dependencies, e.g., npm install or yarn install]
+   ```
+4. [Any other necessary setup steps, e.g., configuring environment variables, setting up a local blockchain node.]
 
 ## Usage
+[Instructions on how to run and use the project, execute scripts, deploy contracts, etc.]
 
-1. Deploy the factory contract
-2. Create a dispenser instance with:
-   - Director address
-   - Merkle root of approved students
-   - USD stipend amount in cents
-   - Chainlink price feed address
-3. Fund the dispenser with ETH
-4. Students can claim their stipend by providing their Merkle proof
-5. Director can withdraw any leftover funds
+### Running Examples/Scripts
+```bash
+[command to run an example or script]
+```
 
-## Security
+### Deploying Contracts
+[Instructions specific to deploying blockchain contracts.]
 
-- Merkle proofs ensure only approved students can claim
-- One-time claim per address
-- Maximum stipend limit of $5.00
-- Only director can withdraw leftover funds
-
-## Testing
-
-The test suite covers:
-- Successful stipend claims
-- Invalid Merkle proofs
-- Double-claim prevention
-- Director withdrawal functionality
-
-Both Hardhat and Foundry test suites are provided:
-- `test/ScholarshipDispenser.test.js` (Hardhat) - Uses mock price feed
-- `test/ScholarshipDispenser.t.sol` (Foundry) - Uses real Chainlink price feed
-
-## License
-
-MIT
+## Project Structure
+[Brief overview of the main directories and files.]
