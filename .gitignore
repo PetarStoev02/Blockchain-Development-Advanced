@@ -1,0 +1,29 @@
+# Hardhat files
+cache
+artifacts
+typechain
+typechain-types
+
+# Foundry files
+out
+cache
+broadcast
+
+# Node
+node_modules
+.env
+
+# IDE
+.vscode
+.idea
+
+# Misc
+.DS_Store
+*.log
+
+# solidity-coverage files
+/coverage
+/coverage.json
+
+# Hardhat Ignition default folder for deployments against a local node
+ignition/deployments/chain-31337
